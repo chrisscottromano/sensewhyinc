@@ -10,7 +10,6 @@
 
 :root{
 	--accent: red;
-	--bg: #1c1d26;
 }
 
 html, body, div, span, applet, object,
@@ -3420,12 +3419,6 @@ input, select, textarea {
 
 /* Header */
 
-	.nav ul{
-		position: sticky;
-		top: 0;
-
-	}
-
 	#page-wrapper {
 		padding-top: 3.5em;
 	}
@@ -3438,7 +3431,7 @@ input, select, textarea {
 		height: 3.5em;
 		left: 0;
 		line-height: 3.5em;
-		position: sticky;
+		position: fixed;
 		top: 0;
 		width: 100%;
 		z-index: 100;
@@ -3454,33 +3447,18 @@ input, select, textarea {
 		}
 
 		#header nav {
-			background-color: #1c1d26;
 			position: absolute;
-			/* padding-right: 1em; */
+			right: 1em;
 			top: 0;
-			border: 1px solid white;
 		}
 
 			#header nav ul {
 				margin: 0;
-				display: grid span4;
-				font-size: 10pt;
-				padding-right: 0;
-				padding-left: 0;
 			}
 
 				#header nav ul li {
-					background-color: transparent;
 					display: inline-block;
-					padding-right: 1em;
-					padding-left: 1em;
-					/* width: 22%; */
-					grid: span 1;
-					/* margin-left: 1em; */
-				}
-				#header nav ul li:hover {
-					background-color: #31323a;
-					/* margin-left: 1em; */
+					margin-left: 1em;
 				}
 
 					#header nav ul li a, #header nav ul li span {
@@ -3517,8 +3495,7 @@ input, select, textarea {
 	body.landing #header {
 		background: transparent;
 		box-shadow: none;
-		position: sticky;
-		top: 0;
+		position: absolute;
 	}
 
 /* Banner */
@@ -3606,8 +3583,8 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		background: var(--bg);
-		padding: 0;
+		background: #272833;
+		padding: 6em 0;
 		text-align: center;
 	}
 
@@ -3812,22 +3789,18 @@ input, select, textarea {
 		/* Footer */
 
 			#footer {
-				padding-bottom: 1em;
+				padding: 4.5em 0;
 			}
 
 	}
 
 /* Small */
-/* 
-	#titleBar {
-		display: none;
-	} */
-/* 
-	#navPanel {
-		display: block;
-	} */
 
-	@media screen and (max-width: 2736px) {
+	#navPanel, #titleBar {
+		display: none;
+	}
+
+	@media screen and (max-width: 736px) {
 
 		/* Basic */
 
@@ -3965,13 +3938,13 @@ input, select, textarea {
 				top: 0;
 				width: 100%;
 				z-index: 10001;
-				background: transparent;
-				/* box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125); */
+				background: #272833;
+				box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
 			}
 
 				#titleBar .title {
 					color: #ffffff;
-					display: none;
+					display: block;
 					font-weight: 300;
 					height: 44px;
 					line-height: 44px;
@@ -4008,27 +3981,19 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: var(--bg);
-						color: whitesmoke;
+						background: #e44c65;
+						color: rgba(255, 255, 255, 0.5);
 						content: '\f0c9';
-						border: 1px solid whitesmoke;
 						display: block;
 						font-size: 18px;
 						height: 44px;
-						left: 0.5em;
+						left: 0;
 						line-height: 44px;
 						position: absolute;
 						text-align: center;
-						top: 0.5em;
+						top: 0;
 						width: 54px;
-						box-sizing: border-box;
-						border-radius: 10%;
 					}
-
-					#titleBar .toggle:hover:before{
-						color: var(--accent)
-					}
-
 
 			#navPanel {
 				-moz-backface-visibility: hidden;
@@ -4049,10 +4014,10 @@ input, select, textarea {
 				overflow-y: auto;
 				position: fixed;
 				top: 0;
-				width: 175px;
+				width: 275px;
 				z-index: 10002;
 				background: #181920;
-				/* padding: 0.75em 1.25em; */
+				padding: 0.75em 1.25em;
 			}
 
 				#navPanel .link {
@@ -4063,12 +4028,10 @@ input, select, textarea {
 					height: 3em;
 					line-height: 3em;
 					text-decoration: none;
-					padding-left: 1em;
 				}
 
 					#navPanel .link:hover {
-						color: var(--accent) !important;
-						background:#272833;
+						color: inherit !important;
 					}
 
 					#navPanel .link:first-child {
@@ -4105,18 +4068,18 @@ input, select, textarea {
 						width: 6.25em;
 					}
 
-			/* body.navPanel-visible #page-wrapper {
+			body.navPanel-visible #page-wrapper {
 				-moz-transform: translateX(275px);
 				-webkit-transform: translateX(275px);
 				-ms-transform: translateX(275px);
 				transform: translateX(275px);
-			} */
+			}
 
 			body.navPanel-visible #titleBar {
-				-moz-transform: translateX(175px);
-				-webkit-transform: translateX(175px);
-				-ms-transform: translateX(175px);
-				transform: translateX(175px);
+				-moz-transform: translateX(275px);
+				-webkit-transform: translateX(275px);
+				-ms-transform: translateX(275px);
+				transform: translateX(275px);
 			}
 
 			body.navPanel-visible #navPanel {
@@ -4129,8 +4092,7 @@ input, select, textarea {
 		/* Footer */
 
 			#footer {
-				padding-bottom: 1em;
-				padding-top: 0;
+				padding: 3.25em 1.5em;
 			}
 
 	}
