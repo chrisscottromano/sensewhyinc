@@ -3890,6 +3890,8 @@ input, select, textarea {
 			#banner {
 				box-shadow: 0 0.125em 0.5em 0 rgba(0, 0, 0, 0.25);
 				min-height: calc(100vh - 44px);
+				padding-top: 44px !important;
+				/* PADDING MOVED FROM PAGEWRAPPER — JUST BELOW */
 			}
 
 				#banner:before {
@@ -3921,7 +3923,7 @@ input, select, textarea {
 				-ms-transition: -ms-transform 0.5s ease;
 				transition: transform 0.5s ease;
 				padding-bottom: 1px;
-				padding-top: 44px !important;
+				/* padding-top: 44px !important; */
 			}
 
 			#titleBar {
@@ -3933,7 +3935,11 @@ input, select, textarea {
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
 				transition: transform 0.5s ease;
-				display: block;
+
+				/* HIDE TITLE BAR — CHANGE TO 'BLOCK' TO DISPLAY */
+				display: none;
+				/* HIDE TITLE BAR */
+
 				height: 44px;
 				left: 0;
 				position: fixed;
@@ -3941,7 +3947,7 @@ input, select, textarea {
 				width: 100%;
 				z-index: 10001;
 				background: #272833;
-				box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
+				/* box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125); */
 			}
 
 				#titleBar .title {
